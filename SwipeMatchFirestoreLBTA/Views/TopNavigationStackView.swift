@@ -4,6 +4,7 @@
 //
 //  Created by Daniel Jeong and Meilyn Wong
 //  Copyright © 2023
+// Meilyn sucks
 //
 
 import UIKit
