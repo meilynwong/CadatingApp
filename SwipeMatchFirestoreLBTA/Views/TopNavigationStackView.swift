@@ -2,8 +2,8 @@
 //  TopNavigationStackView.swift
 //  SwipeMatchFirestoreLBTA
 //
-//  Created by Brian Voong on 11/1/18.
-//  Copyright © 2018 Brian Voong. All rights reserved.
+//  Created by Daniel Jeong and Meilyn Wong
+//  Copyright © 2023
 //
 
 import UIKit
