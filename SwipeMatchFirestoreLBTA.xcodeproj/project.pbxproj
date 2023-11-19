@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7236DC582B0AAFD000369F7A /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7236DC572B0AAFD000369F7A /* CardView.swift */; };
 		C70F23F1218AA2B30088CBE6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70F23F0218AA2B30088CBE6 /* AppDelegate.swift */; };
 		C70F23F3218AA2B30088CBE6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70F23F2218AA2B30088CBE6 /* ViewController.swift */; };
 		C70F23F6218AA2B30088CBE6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C70F23F4218AA2B30088CBE6 /* Main.storyboard */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7236DC572B0AAFD000369F7A /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		C70F23ED218AA2B30088CBE6 /* SwipeMatchFirestoreLBTA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwipeMatchFirestoreLBTA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C70F23F0218AA2B30088CBE6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C70F23F2218AA2B30088CBE6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 			children = (
 				C70F240E218B95320088CBE6 /* HomeBottomControlsStackView.swift */,
 				C70F2410218BA0570088CBE6 /* TopNavigationStackView.swift */,
+				7236DC572B0AAFD000369F7A /* CardView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -164,6 +167,7 @@
 				C70F240F218B95320088CBE6 /* HomeBottomControlsStackView.swift in Sources */,
 				C70F23F1218AA2B30088CBE6 /* AppDelegate.swift in Sources */,
 				C70F2404218AA4480088CBE6 /* Extensions+UIView.swift in Sources */,
+				7236DC582B0AAFD000369F7A /* CardView.swift in Sources */,
 				C70F2411218BA0570088CBE6 /* TopNavigationStackView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
