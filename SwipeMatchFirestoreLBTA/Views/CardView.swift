@@ -17,7 +17,6 @@ class CardView: UIView {
     //Configuration funcs
     fileprivate let threshold: CGFloat = 100
 
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         layer.cornerRadius = 10
@@ -28,9 +27,6 @@ class CardView: UIView {
         let pangesture = UIPanGestureRecognizer(target: self, action: #selector(handlePan))
         addGestureRecognizer(pangesture)
     }
-    
-    
-    
     
     @objc fileprivate func handlePan(gesture: UIPanGestureRecognizer) {
         
@@ -64,6 +60,13 @@ class CardView: UIView {
     //underscore you reduce amount of text in your code
     
     fileprivate func handleEnded(gesture: UIPanGestureRecognizer) {
+        let shouldDismissCard = gesture.translation(in: nil).x > threshold
+        
+        UIView.animate(withDuration: 0.75, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.1, options: .curveEaseOut, animations: {
+            if shouldDismissCard {
+                self.frame = CGRect(x: 1000, y: 0, width: self.frame.width, height: self.frame.height)
+            }
+            else {
         let translationDirection: CGFloat = gesture.translation(in: nil).x > 0 ? 1 : -1
         let shouldDismissCard = abs(gesture.translation(in: nil).x) > threshold
         
@@ -76,6 +79,8 @@ class CardView: UIView {
             
         }) { (_) in
             self.transform = .identity
+            self.frame = CGRect(x: 0, y: 0, width: self.superview!.frame.width, height: self.superview!.frame.height)
+
             //Bring the card back
             //I dont know why the animation is really wack on the simulator, we may need to test with an iphon
             self.frame = CGRect(x: 0, y: 0, width: self.superview!.frame.width, height: self.superview!.frame.height)
