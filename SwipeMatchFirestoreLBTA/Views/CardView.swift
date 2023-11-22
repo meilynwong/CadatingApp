@@ -2,30 +2,37 @@
 //  CardView.swift
 //  SwipeMatchFirestoreLBTA
 //
-//  Created by Meilyn Jade Wong on 11/19/23.
-
 // Modified on 11/19/23 by Daniel No Middle Name Jeong
-//I didn't know we were using middle names now 
+//I didn't know we were using middle names now
 //
-
+ 
 import UIKit
-
+ 
 class CardView: UIView {
     
-    fileprivate let imageView =  UIImageView(image: UIImage(named: "profilePic"))
+    let imageView =  UIImageView(image: UIImage(named: "profilePic"))
+    let informationLabel = UILabel()
     
     //Configuration funcs
-    fileprivate let threshold: CGFloat = 100
-
+    fileprivate let threshold: CGFloat = 80
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         layer.cornerRadius = 10
         clipsToBounds = true
         
+        imageView.contentMode = .scaleAspectFill
         addSubview(imageView)
         imageView.fillSuperview()
-        let pangesture = UIPanGestureRecognizer(target: self, action: #selector(handlePan))
-        addGestureRecognizer(pangesture)
+        
+        addSubview(informationLabel)
+        informationLabel.anchor(top: nil, leading: leadingAnchor, bottom: bottomAnchor, trailing: trailingAnchor, padding: .init(top: 0, left: 16, bottom: 16, right: 16))
+        informationLabel.textColor = .white
+        informationLabel.font = UIFont.systemFont(ofSize: 34, weight: .heavy)
+        informationLabel.numberOfLines = 0
+        
+        let panGesture = UIPanGestureRecognizer(target: self, action: #selector(handlePan))
+        addGestureRecognizer(panGesture)
     }
     
     @objc fileprivate func handlePan(gesture: UIPanGestureRecognizer) {
@@ -33,7 +40,7 @@ class CardView: UIView {
         switch gesture.state {
         case .changed:
             handleChanged(gesture)
-        case.ended:
+        case .ended:
             handleEnded(gesture: gesture)
         default:
             ()
@@ -45,7 +52,6 @@ class CardView: UIView {
         // converting the radians to degreees
         
         let translation = gesture.translation(in: nil)
-
         
         //follow the gesture translation x
         // divide by 20 to minimize the rotation effect, to make transformation slower
@@ -60,35 +66,27 @@ class CardView: UIView {
     //underscore you reduce amount of text in your code
     
     fileprivate func handleEnded(gesture: UIPanGestureRecognizer) {
-        let shouldDismissCard = gesture.translation(in: nil).x > threshold
-        
-        UIView.animate(withDuration: 0.75, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.1, options: .curveEaseOut, animations: {
-            if shouldDismissCard {
-                self.frame = CGRect(x: 1000, y: 0, width: self.frame.width, height: self.frame.height)
-            }
-            else {
         let translationDirection: CGFloat = gesture.translation(in: nil).x > 0 ? 1 : -1
         let shouldDismissCard = abs(gesture.translation(in: nil).x) > threshold
         
-        UIView.animate(withDuration: 0.75, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.1, options: .curveEaseOut, animations: {
+        UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.1, options: .curveEaseOut, animations: {
             if shouldDismissCard {
-                self.frame = CGRect(x: 1000 * translationDirection, y: 0, width: self.frame.width, height: self.frame.height)
+                self.frame = CGRect(x: 600 * translationDirection, y: 0, width: self.frame.width, height: self.frame.height)
             } else {
                 self.transform = .identity
             }
             
         }) { (_) in
             self.transform = .identity
-            self.frame = CGRect(x: 0, y: 0, width: self.superview!.frame.width, height: self.superview!.frame.height)
-
-            //Bring the card back
-            //I dont know why the animation is really wack on the simulator, we may need to test with an iphon
-            self.frame = CGRect(x: 0, y: 0, width: self.superview!.frame.width, height: self.superview!.frame.height)
+            if shouldDismissCard {
+                self.removeFromSuperview()
+            }
+            //self.frame = CGRect(x: 0, y: 0, width: self.superview!.frame.width, height: self.superview!.frame.height)
         }
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+ 
 }
