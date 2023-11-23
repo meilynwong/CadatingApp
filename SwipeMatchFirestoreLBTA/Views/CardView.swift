@@ -2,16 +2,25 @@
 //  CardView.swift
 //  SwipeMatchFirestoreLBTA
 //
-// Modified on 11/19/23 by Daniel No Middle Name Jeong
-//I didn't know we were using middle names now
+// Modified on 11/19/23 by DJ
 //
  
 import UIKit
  
 class CardView: UIView {
     
-    let imageView =  UIImageView(image: UIImage(named: "profilePic"))
-    let informationLabel = UILabel()
+    // if card is set, then you already set those properties from the viewModel data
+    var cardViewModel: CardViewModel! {
+        didSet {
+            imageView.image = UIImage(named: cardViewModel.imageName)
+            informationLabel.attributedText = cardViewModel.attributedString
+            informationLabel.textAlignment = cardViewModel.textAlignment
+        }
+    }
+    //Don't want to expose properties to outside this view
+    //encapsulation, dont make variabels accesible from other classes 
+    fileprivate let imageView =  UIImageView(image: UIImage(named: "profilePic"))
+    fileprivate let informationLabel = UILabel()
     
     //Configuration funcs
     fileprivate let threshold: CGFloat = 80

@@ -10,6 +10,7 @@
 		7236DC582B0AAFD000369F7A /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7236DC572B0AAFD000369F7A /* CardView.swift */; };
 		7236DC5B2B0EAC3100369F7A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7236DC5A2B0EAC3100369F7A /* User.swift */; };
 		7236DC5F2B0EB8F600369F7A /* CardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7236DC5E2B0EB8F600369F7A /* CardViewModel.swift */; };
+		B0606A732B0FE884000196AC /* Advertiser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0606A722B0FE884000196AC /* Advertiser.swift */; };
 		C70F23F1218AA2B30088CBE6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70F23F0218AA2B30088CBE6 /* AppDelegate.swift */; };
 		C70F23F3218AA2B30088CBE6 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70F23F2218AA2B30088CBE6 /* HomeController.swift */; };
 		C70F23F6218AA2B30088CBE6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C70F23F4218AA2B30088CBE6 /* Main.storyboard */; };
@@ -24,6 +25,7 @@
 		7236DC572B0AAFD000369F7A /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		7236DC5A2B0EAC3100369F7A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		7236DC5E2B0EB8F600369F7A /* CardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewModel.swift; sourceTree = "<group>"; };
+		B0606A722B0FE884000196AC /* Advertiser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Advertiser.swift; sourceTree = "<group>"; };
 		C70F23ED218AA2B30088CBE6 /* SwipeMatchFirestoreLBTA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwipeMatchFirestoreLBTA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C70F23F0218AA2B30088CBE6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C70F23F2218AA2B30088CBE6 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
@@ -67,6 +69,7 @@
 			isa = PBXGroup;
 			children = (
 				7236DC5E2B0EB8F600369F7A /* CardViewModel.swift */,
+				B0606A722B0FE884000196AC /* Advertiser.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -195,6 +198,7 @@
 			files = (
 				C70F23F3218AA2B30088CBE6 /* HomeController.swift in Sources */,
 				C70F240F218B95320088CBE6 /* HomeBottomControlsStackView.swift in Sources */,
+				B0606A732B0FE884000196AC /* Advertiser.swift in Sources */,
 				C70F23F1218AA2B30088CBE6 /* AppDelegate.swift in Sources */,
 				C70F2404218AA4480088CBE6 /* Extensions+UIView.swift in Sources */,
 				7236DC5F2B0EB8F600369F7A /* CardViewModel.swift in Sources */,
@@ -347,13 +351,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = TU4944T6UG;
+				DEVELOPMENT_TEAM = 9NATQ56PGK;
 				INFOPLIST_FILE = SwipeMatchFirestoreLBTA/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.letsbuildthatapp.SwipeMatchFirestoreLBTA;
+				PRODUCT_BUNDLE_IDENTIFIER = CadatingApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -365,13 +369,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = TU4944T6UG;
+				DEVELOPMENT_TEAM = 9NATQ56PGK;
 				INFOPLIST_FILE = SwipeMatchFirestoreLBTA/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.letsbuildthatapp.SwipeMatchFirestoreLBTA;
+				PRODUCT_BUNDLE_IDENTIFIER = CadatingApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";

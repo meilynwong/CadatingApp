@@ -2,8 +2,6 @@
 //  Extensions+UIView.swift
 //  SlideOutMenuInProgress
 //
-//  Created by Brian Voong on 9/30/18.
-//  Copyright © 2018 Brian Voong. All rights reserved.
 //
 
 import UIKit
