@@ -14,50 +14,35 @@ class HomeController: UIViewController {
     let cardsDeckView = UIView()
     let buttonsStackView = HomeBottomControlsStackView()
     
-//    let users = [
-//
-//        User(name: "Kai", age: 21, profession: "Ladies Man", imageName: "profilePic"),
-//        User(name: "Kiana", age: 26, profession: "Stone Cold Killah", imageName: "profilePic2")
-//
-//    ]
-    
-    let cardViewModels = [
-        User(name: "Kai", age: 21, profession: "Ladies Man", imageName: "profilePic").toCardViewModel(),
-        User(name: "Kiana", age: 26, profession: "Stone Cold Killah", imageName: "profilePic2").toCardViewModel()
+    let cardViewModels: [CardViewModel] = {
+        let producers = [
+            User(name: "Kai", age: 21, profession: "Ladies Man", imageName: "profilePic"),
+            User(name: "Kiana", age: 40, profession: "Stone Cold Killah", imageName: "profilePic2"),
+            Advertiser(title: "Quality You Can Taste", brandName: "In N Out", posterPhotoName: "innout"),
+            User(name: "Brett", age: 21, profession: "Gamblin Thief", imageName: "brett1")
+        ] as [ProducesCardViewModel]
+        
+        let viewModels = producers.map({return $0.toCardViewModel()})
+        return viewModels
+    }()
+        
 
-    ]
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupLayout()
         setupDummyCards()
     }
     
+    //For each loop to add the cards in order
     fileprivate func setupDummyCards() {
         cardViewModels.forEach { (cardVM) in
             let cardView = CardView(frame: .zero)
-            cardView.imageView.image = UIImage(named: cardVM.imageName)
-            cardView.informationLabel.attributedText = cardVM.attributedString
-            cardView.informationLabel.textAlignment = cardVM.textAlignment
+            
+            cardView.cardViewModel = cardVM
             cardsDeckView.addSubview(cardView)
             cardView.fillSuperview()
         }
         
-//        users.forEach { (user) in
-//            let cardView = CardView(frame: .zero)
-//            cardView.imageView.image = UIImage(named: user.imageName)
-//            cardView.informationLabel.text = "\(user.name) \(user.age)\n\(user.profession)"
-//            
-//            let attributedText = NSMutableAttributedString(string: user.name, attributes: [.font: UIFont.systemFont(ofSize: 32, weight: .heavy)])
-//            attributedText.append(NSAttributedString(string: "   \(user.age)", attributes: [.font: UIFont.systemFont(ofSize: 24, weight: .regular)]))
-//            
-//            attributedText.append(NSAttributedString(string: "\n\(user.profession)", attributes: [.font: UIFont.systemFont(ofSize: 20, weight: .regular)]))
-//            
-//            cardView.informationLabel.attributedText = attributedText
-//
-//            cardsDeckView.addSubview(cardView)
-//            cardView.fillSuperview()
-//        }
     }
     
     // MARK:- Fileprivate

@@ -2,10 +2,16 @@
 //  CardViewModel.swift
 //  SwipeMatchFirestoreLBTA
 //
-//  Copyright © 2023 Brian Voong. All rights reserved.
 //
 
 import UIKit
+
+//create a contract between multiple different classes
+//basically implementing objected oriented programming 
+protocol ProducesCardViewModel{
+    func toCardViewModel() -> CardViewModel
+    
+}
 
 struct CardViewModel {
     let imageName: String

@@ -1,13 +1,14 @@
 //
 //  User.swift
 //  SwipeMatchFirestoreLBTA
+//  Modified on 23 NOV 2023 DJ
 //
-//  Copyright © 2023 Brian Voong. All rights reserved.
 //
 
 import UIKit
 
-struct User {
+struct User : ProducesCardViewModel{
+    
     let name: String
     let age: Int
     let profession: String
