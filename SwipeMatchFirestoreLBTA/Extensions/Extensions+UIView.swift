@@ -2,29 +2,35 @@
 //  Extensions+UIView.swift
 //  SlideOutMenuInProgress
 //
+//Added comments 11/23/23
 //
 
 import UIKit
 
+// Extension to create UIColor with RGB values
 extension UIColor {
     static func rgb(red: CGFloat, green: CGFloat, blue: CGFloat) -> UIColor {
         return UIColor(red: red/255, green: green/255, blue: blue/255, alpha: 1)
     }
 }
 
+// Struct to store constraints for a view's anchors
 struct AnchoredConstraints {
     var top, leading, bottom, trailing, width, height: NSLayoutConstraint?
 }
 
-// Reference Video: https://youtu.be/iqpAP7s3b-8
+// UIView extension for simplified Auto Layout
 extension UIView {
     
+    // Anchor function to set up Auto Layout constraints
     @discardableResult
     func anchor(top: NSLayoutYAxisAnchor?, leading: NSLayoutXAxisAnchor?, bottom: NSLayoutYAxisAnchor?, trailing: NSLayoutXAxisAnchor?, padding: UIEdgeInsets = .zero, size: CGSize = .zero) -> AnchoredConstraints {
         
+        // Ensure Auto Layout is enabled
         translatesAutoresizingMaskIntoConstraints = false
         var anchoredConstraints = AnchoredConstraints()
         
+        // Set up constraints based on provided parameters
         if let top = top {
             anchoredConstraints.top = topAnchor.constraint(equalTo: top, constant: padding.top)
         }
@@ -49,11 +55,13 @@ extension UIView {
             anchoredConstraints.height = heightAnchor.constraint(equalToConstant: size.height)
         }
         
+        // Activate all constraints
         [anchoredConstraints.top, anchoredConstraints.leading, anchoredConstraints.bottom, anchoredConstraints.trailing, anchoredConstraints.width, anchoredConstraints.height].forEach{ $0?.isActive = true }
         
         return anchoredConstraints
     }
     
+    // Fill the superview with optional padding
     func fillSuperview(padding: UIEdgeInsets = .zero) {
         translatesAutoresizingMaskIntoConstraints = false
         if let superviewTopAnchor = superview?.topAnchor {
@@ -73,6 +81,7 @@ extension UIView {
         }
     }
     
+    // Center the view in its superview with optional size
     func centerInSuperview(size: CGSize = .zero) {
         translatesAutoresizingMaskIntoConstraints = false
         if let superviewCenterXAnchor = superview?.centerXAnchor {
@@ -91,5 +100,5 @@ extension UIView {
             heightAnchor.constraint(equalToConstant: size.height).isActive = true
         }
     }
-    
 }
+
