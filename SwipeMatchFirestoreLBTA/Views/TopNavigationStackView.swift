@@ -3,7 +3,6 @@
 //  SwipeMatchFirestoreLBTA
 //
 //  Created by Daniel Jeong and Meilyn Wong
-//  Copyright © 2023
 //
 
 import UIKit
