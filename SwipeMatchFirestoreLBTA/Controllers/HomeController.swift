@@ -29,8 +29,18 @@ class HomeController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        topStackView.settingsButton.addTarget(self,action: #selector(handleSettings), for: .touchUpInside)
+        
         setupLayout()
         setupDummyCards()
+    }
+    
+    @objc func handleSettings(){
+        print("Show Registration Page")
+        let registrationController = RegistrationController()
+        present(registrationController, animated: true)
+        
     }
     
     //For each loop to add the cards in order

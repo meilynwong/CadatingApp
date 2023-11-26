@@ -3,7 +3,8 @@
 //  SwipeMatchFirestoreLBTA
 //
 //  Created by Daniel Jeong and Meilyn Wong
-//  Copyright © 2023 
+// Modified on 11/26/2023 by DJ
+//  Copyright © 2023
 //
 
 import UIKit
@@ -15,7 +16,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+
+        
+        //Whenever you run the code, you want to registration controller immediately
+        // To test out code of registration code
+        window = UIWindow()
+        window?.makeKeyAndVisible()
+        window?.rootViewController = RegistrationController()
         return true
     }
 
